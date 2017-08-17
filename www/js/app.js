@@ -947,23 +947,23 @@ $.post( "http://www.dateorduck.com/clearnotifications.php", { projectid:f_projec
 
 function startApp(){
 
-
+alert('1');
     
     firebaseinit = localStorage.getItem('tokenStore');
-
+alert('2');
     if (firebaseinit){
 
 
-        
+       alert('3'); 
         
 
             
             
       var credential = firebase.auth.FacebookAuthProvider.credential(firebaseinit);
 
-        
+        alert('4');
             firebase.auth().signInWithCredential(credential).catch(function(error) {
-		    
+		alert('5');    
           // Handle Errors here.
           var errorCode = error.code;
           var errorMessage = error.message;
@@ -979,13 +979,13 @@ function startApp(){
          
             
             
-
+alert('6'); 
         
         
         
     }
     else {
-
+alert('7'); 
 
     //alert('no tokenStore');
     }
