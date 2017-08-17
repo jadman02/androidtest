@@ -950,7 +950,8 @@ function startApp(){
 alert('1');
     
     firebaseinit = localStorage.getItem('tokenStore');
-alert('2');
+alert(firebaseinit);
+	alert('2');
     if (firebaseinit){
 
 
