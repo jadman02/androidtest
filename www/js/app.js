@@ -743,44 +743,10 @@ var app = {
 
 	    
 	    
-      FCMPlugin.onNotification(function(data){
-   
-	      $( ".notifspan" ).show();
-$( ".notifspan" ).addClass('notifbounce');
-setTimeout(function(){ $( ".notifspan" ).removeClass('notifbounce'); }, 5000);
-	      
-	      cordova.plugins.notification.badge.set(data.ev4);
-	      
-	      if(data.wasTapped){
-      //Notification was received on device tray and tapped by the user.
-
-	    
-	   if (latitudep){directUser(data.ev1,data.ev2,data.ev3);}
-	    else{
-	    datatap = true;
-	    tapid = data.ev1;
-	taptype = data.ev2;
-	tapname = data.ev3;
-	    }
-	    
-	    
-	    
-    }else{
-      //Notification was received in foreground. Maybe the user needs to be notified.
-
-	    myApp.addNotification({
-        title: 'Date or Duck',
-		    subtitle:data.aps.alert.title,
-        message: data.aps.alert.body,
-		    hold:2000,
-		    closeOnClick:true,
-		    onClick:function(){directUser(data.ev1,data.ev2,data.ev3);},
-        media: '<img width="44" height="44" style="border-radius:100%" src="media/icon-76.png">'
-    });
-	    
-	   // alert( JSON.stringify(data) );
-
-    }
+window.FirebasePlugin.onNotificationOpen(function(notification) {
+    alert(notification);
+}, function(error) {
+    alert(error);
 });
 
         // Add views
