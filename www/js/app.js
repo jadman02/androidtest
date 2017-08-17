@@ -422,7 +422,7 @@ var loginmethod = window.localStorage.getItem("loginmethod");
 	   
 		 myApp.alert('Please login again to continue.', 'Session expired', function () {
 
-			 window.FirebasePlugin.unsubscribe(f_uid);
+			 //window.FirebasePlugin.unsubscribe(f_uid);
 
 		cordova.plugins.notification.badge.set(0);
 	var loginmethod = window.localStorage.getItem("loginmethod");
@@ -745,11 +745,11 @@ var app = {
 
 	    
 	    
-window.FirebasePlugin.onNotificationOpen(function(notification) {
-    alert(notification);
-}, function(error) {
-    alert(error);
-});
+//window.FirebasePlugin.onNotificationOpen(function(notification) {
+  //  alert(notification);
+//}, function(error) {
+  //  alert(error);
+//});
 
         // Add views
 view1 = myApp.addView('#view-1');
@@ -2169,7 +2169,7 @@ if (f_token_expiry){
 if (f_token_expiry  < expireunix){
 
  myApp.alert('Please login again to continue.', 'Session expired', function () {
-       window.FirebasePlugin.unsubscribe(f_uid);
+       //window.FirebasePlugin.unsubscribe(f_uid);
 
 		cordova.plugins.notification.badge.set(0);
 	var loginmethod = window.localStorage.getItem("loginmethod");
@@ -2188,7 +2188,7 @@ if (f_token_expiry  < expireunix){
 
  myApp.alert('Please login again to continue.', 'Session expired', function () {
        
-	 window.FirebasePlugin.unsubscribe(f_uid);
+	 //window.FirebasePlugin.unsubscribe(f_uid);
 
 		cordova.plugins.notification.badge.set(0);
 	var loginmethod = window.localStorage.getItem("loginmethod");
@@ -10887,7 +10887,7 @@ desertRef.delete().then(function() {
 
 
 }
- window.FirebasePlugin.unsubscribe(f_uid);
+ //window.FirebasePlugin.unsubscribe(f_uid);
 
 		cordova.plugins.notification.badge.set(0);
 	var loginmethod = window.localStorage.getItem("loginmethod");
@@ -11422,7 +11422,7 @@ else{$( ".loadmorebuttonalbums").show();}
 	 if (jqXHR.responseJSON.error.code == '190'){
 	   
 		 myApp.alert('Please login again to continue.', 'Session expired', function () {
-        window.FirebasePlugin.unsubscribe(f_uid);
+        //window.FirebasePlugin.unsubscribe(f_uid);
 			 
 		cordova.plugins.notification.badge.set(0);
 	var loginmethod = window.localStorage.getItem("loginmethod");
