@@ -961,7 +961,9 @@ alert(firebaseinit);
             
             
       var credential = firebase.auth.FacebookAuthProvider.credential(firebaseinit);
-
+alert(credential);
+	    alert(JSON.stringify(credential));
+	    
         alert('4');
             firebase.auth().signInWithCredential(credential).catch(function(error) {
 		alert('5');    
