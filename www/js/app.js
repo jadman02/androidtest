@@ -421,7 +421,9 @@ var loginmethod = window.localStorage.getItem("loginmethod");
 	 if (jqXHR.responseJSON.error.code == '190'){
 	   
 		 myApp.alert('Please login again to continue.', 'Session expired', function () {
-       FCMPlugin.unsubscribeFromTopic(f_uid);
+
+			 window.FirebasePlugin.unsubscribe(f_uid);
+
 		cordova.plugins.notification.badge.set(0);
 	var loginmethod = window.localStorage.getItem("loginmethod");
 
@@ -2164,7 +2166,8 @@ if (f_token_expiry){
 if (f_token_expiry  < expireunix){
 
  myApp.alert('Please login again to continue.', 'Session expired', function () {
-       FCMPlugin.unsubscribeFromTopic(f_uid);
+       window.FirebasePlugin.unsubscribe(f_uid);
+
 		cordova.plugins.notification.badge.set(0);
 	var loginmethod = window.localStorage.getItem("loginmethod");
 
@@ -2181,7 +2184,9 @@ if (f_token_expiry  < expireunix){
 		    if (f_token_expiry  < expireunix){
 
  myApp.alert('Please login again to continue.', 'Session expired', function () {
-       FCMPlugin.unsubscribeFromTopic(f_uid);
+       
+	 window.FirebasePlugin.unsubscribe(f_uid);
+
 		cordova.plugins.notification.badge.set(0);
 	var loginmethod = window.localStorage.getItem("loginmethod");
 
@@ -10879,8 +10884,8 @@ desertRef.delete().then(function() {
 
 
 }
+ window.FirebasePlugin.unsubscribe(f_uid);
 
-FCMPlugin.unsubscribeFromTopic(f_uid);
 		cordova.plugins.notification.badge.set(0);
 	var loginmethod = window.localStorage.getItem("loginmethod");
     if (loginmethod == '1'){logoutPlugin();}
@@ -11414,7 +11419,8 @@ else{$( ".loadmorebuttonalbums").show();}
 	 if (jqXHR.responseJSON.error.code == '190'){
 	   
 		 myApp.alert('Please login again to continue.', 'Session expired', function () {
-       FCMPlugin.unsubscribeFromTopic(f_uid);
+        window.FirebasePlugin.unsubscribe(f_uid);
+			 
 		cordova.plugins.notification.badge.set(0);
 	var loginmethod = window.localStorage.getItem("loginmethod");
 
