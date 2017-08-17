@@ -646,7 +646,7 @@ f_token_expiry = f_unix + 2678400;
 
 		 ftokenset = true;
 	
-		 
+alert('yo0');		 
 		 
 		 window.localStorage.setItem("tokenStore", userData.authResponse.accessToken);
                         window.localStorage.setItem("loginmethod", "1");
@@ -655,7 +655,7 @@ f_token_expiry = f_unix + 2678400;
                         startApp();
    
 		 window.FirebasePlugin.subscribe(userData.authResponse.userID);
-		 
+		alert('yo1'); 
 
 		 
                     } else {
