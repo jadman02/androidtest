@@ -6601,7 +6601,7 @@ $( ".onlineblock" ).show();
 
 
      
-'<div class="swiper-container swiper-questions" style="height:100%;overflow-y:scroll;margin-bottom:-44px !important;padding-bottom:-44px !important;background-color:yellow;">'+
+'<div class="swiper-container swiper-questions" style="height:100%;overflow-y:scroll;margin-bottom:-44px !important;padding-bottom:-44px !important;background-color:yellow;border-bottom:200px solid white;">'+
  
 
  '<div style="height:100%;width:100%;overflow-x:hidden;" onclick="backtoProfile();">'+
@@ -6620,7 +6620,7 @@ $( ".onlineblock" ).show();
     
     
  
- '   <div class="swiper-wrapper wrapper-questions" style="height:100%;border-bottom:70px solid white;background-color:blue;">'+
+ '   <div class="swiper-wrapper wrapper-questions" style="height:100%;background-color:blue;">'+
 
 
   '  </div>'+
