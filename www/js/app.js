@@ -6601,7 +6601,7 @@ $( ".onlineblock" ).show();
 
 
      
-'<div class="swiper-container swiper-questions" style="height:100%;overflow-y:scroll;margin-bottom:-44px !important;padding-bottom:-44px !important;background-color:yellow;border-bottom:200px solid white;">'+
+'<div class="swiper-container swiper-questions" style="overflow:hidden;background-color:yellow;">'+
  
 
  '<div style="height:100%;width:100%;overflow-x:hidden;" onclick="backtoProfile();">'+
@@ -7017,7 +7017,7 @@ swiperQuestions = myApp.swiper('.swiper-questions', {
 
 	//questionsslide  
 	  
-	  var slidenewhight = $(".prof_" + swiper.activeIndex).height() -300;
+	  var slidenewhight = $(".prof_" + swiper.activeIndex).height() + $(document).height();
   var wrapperheightshould = $(".prof_" + swiper.activeIndex).height() - 300;
 //	  alert(wrapperheightshould);
 //$( ".wrapper-questions").css("height",(wrapperheightshould - 200)+ "px");
@@ -7026,7 +7026,7 @@ swiperQuestions = myApp.swiper('.swiper-questions', {
 //var slidenow = $(".questionsslide").height();
 $( ".availyope").hide();
 //$( ".availyo_"+ new_all[0].id ).show();
-	  $( ".questionsslide").css("height",(slidenewhight)+ "px");
+	  $( ".swiper-questions").css("height",(slidenewhight)+ "px");
 
 
 
