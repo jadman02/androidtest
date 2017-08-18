@@ -7043,7 +7043,7 @@ if (new_all.length === 1){swiper.lockSwipes();myPhotoBrowser.swiper.lockSwipes()
 
 var wrapperheightshould = $(".prof_" + swiper.activeIndex).height();
 $( ".wrapper-questions").css("height",(wrapperheightshould - 200)+ "px");
-
+alert(wrapperheightshould);
 
 if(comingback === 1){   
    if (swiper.activeIndex > swiper.previousIndex){myPhotoBrowser.swiper.slideNext();}
