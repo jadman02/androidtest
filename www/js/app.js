@@ -6640,7 +6640,7 @@ $( ".nextphoto" ).hide();
    var boxcolor,displayavail,availabilityli,availabletext,iconavaill;
  iconavaill='f';boxcolor = 'width:60px;color:#007aff;opacity:1;background-color:transparent';displayavail='none';availabletext='';
    
-   $( ".wrapper-questions" ).append('<div class="swiper-slide slideinfo_'+new_all[i].id+'" style="height:100%;margin-bottom:-44px;">'+
+   $( ".wrapper-questions" ).append('<div class="swiper-slide slideinfo_'+new_all[i].id+'" style="height:100%;margin-bottom:-60px;padding-bottom:-60px;">'+
 
 
 
@@ -6663,7 +6663,7 @@ $( ".nextphoto" ).hide();
 
 
 
-'<div onclick="scrolltoTop()" style="z-index:12000;margin-top:15px;background-color:white;margin-bottom:-44px;border-radius:20px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;display:none;" class="prof_'+i+' infoprofile availyo_'+ new_all[i].id+'">'+
+'<div onclick="scrolltoTop()" style="z-index:12000;margin-top:15px;background-color:white;margin-bottom:-60px;border-radius:20px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;display:none;" class="prof_'+i+' infoprofile availyo_'+ new_all[i].id+'">'+
 
 
    
