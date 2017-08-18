@@ -6601,7 +6601,7 @@ $( ".onlineblock" ).show();
 
 
      
-'<div class="swiper-container swiper-questions" style="height:calc(100% - 44px);overflow-y:scroll;">'+
+'<div class="swiper-container swiper-questions" style="height:100%;overflow-y:scroll;margin-bottom:-44px;padding-bottom:0px;">'+
  
 
  '<div style="height:100%;width:100%;overflow-x:hidden;" onclick="backtoProfile();">'+
