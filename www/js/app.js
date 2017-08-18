@@ -6663,7 +6663,7 @@ $( ".nextphoto" ).hide();
 
 
 
-'<div onclick="scrolltoTop()" style="z-index:12000;margin-top:15px;background-color:white;margin-bottom:-60px;border-radius:20px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;display:none;" class="prof_'+i+' infoprofile availyo_'+ new_all[i].id+'">'+
+'<div onclick="scrolltoTop()" style="z-index:12000;margin-top:15px;background-color:white;margin-bottom:-60px;border-radius:20px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;display:none;padding-bottom:0px;" class="prof_'+i+' infoprofile availyo_'+ new_all[i].id+'">'+
 
 
    
@@ -7022,9 +7022,8 @@ swiperQuestions = myApp.swiper('.swiper-questions', {
 //$( ".wrapper-questions").css("height",(wrapperheightshould - 200)+ "px");
 
 	  $( ".wrapper-questions").css("height",(wrapperheightshould)+ "px");
-	  $( ".wrapper-questions").css("margin-bottom","-40px");
-var slidenow = $(".questionsslide").height();
-	  alert(slidenow);
+	  $( ".prof_" + swiper.activeIndex).css("margin-bottom","-40px");
+//var slidenow = $(".questionsslide").height();
 $( ".availyope").hide();
 //$( ".availyo_"+ new_all[0].id ).show();
 
