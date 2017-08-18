@@ -3242,7 +3242,7 @@ if (rightdates[i].created_uid != f_uid) {picturesrc = rightdates[i].from_picture
 
  var unix = Math.round(+new Date()/1000);
 
-   var c = new Date(rightdates[i].chat_expire*1000 - 1);
+   var c = new Date(rightdates[i].chat_expire*1000 - 36000000);
     
 
 var cday = weekday[c.getDay()];
