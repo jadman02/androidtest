@@ -6600,8 +6600,7 @@ $( ".onlineblock" ).show();
        //                ' <a href="#tab3" class="nexts button" style="border-radius:5px;position:absolute;right:-37px;width:56px;top:50%;margin-top:-26px;height:56px;color:#2196f3;border:0;z-index:99;background-color:rgba(247, 247, 247, 0.952941);"><i class="pe-7s-angle-right pe-4x" style="margin-left:-35px;margin-top:-1px;"></i></a>'+
 
 
-     
-'<div class="swiper-container swiper-questions" style="height:100%;overflow-y:scroll;">'+
+'<div class="swiper-container swiper-questions" style="height:calc(100% - 127px);overflow-y:scroll;">'+
  
 
  '<div style="height:100%;width:100%;overflow-x:hidden;" onclick="backtoProfile();">'+
