@@ -6673,7 +6673,7 @@ $( ".nextphoto" ).hide();
 
 
 
-'<div class="list-block" style="margin-top:0px;clear:both;padding-bottom:0px;background-color:white;">'+
+'<div class="list-block checkheight_'+new_all[i].id+'" style="margin-top:0px;clear:both;padding-bottom:0px;background-color:white;">'+
     '<ul class="profileul_'+new_all[i].id+'" style="background-color:white;margin-bottom:0px;">'+
       
         
@@ -7013,7 +7013,7 @@ swiperQuestions = myApp.swiper('.swiper-questions', {
   $( ".infoprofile").hide();
 	  $( ".adown" ).css( "opacity","1" );
   var wrapperheightshould = $(".prof_" + swiper.activeIndex).height();
-$( ".wrapper-questions").css("height",(wrapperheightshould - 150)+ "px");
+$( ".wrapper-questions").css("height",(wrapperheightshould - 180)+ "px");
 $( ".availyope").hide();
 //$( ".availyo_"+ new_all[0].id ).show();
 
