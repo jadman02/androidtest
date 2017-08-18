@@ -6640,7 +6640,7 @@ $( ".nextphoto" ).hide();
    var boxcolor,displayavail,availabilityli,availabletext,iconavaill;
  iconavaill='f';boxcolor = 'width:60px;color:#007aff;opacity:1;background-color:transparent';displayavail='none';availabletext='';
    
-   $( ".wrapper-questions" ).append('<div class="swiper-slide questionsslide slideinfo_'+new_all[i].id+'" style="">'+
+   $( ".wrapper-questions" ).append('<div class="swiper-slide questionsslide slideinfo_'+new_all[i].id+'" style="background-color:white;">'+
 
 
 
