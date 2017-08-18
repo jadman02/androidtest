@@ -6673,8 +6673,8 @@ $( ".nextphoto" ).hide();
 
 
 
-'<div class="list-block" style="margin-top:0px;clear:both;">'+
-    '<ul class="profileul_'+new_all[i].id+'" style="background-color:white">'+
+'<div class="list-block" style="margin-top:0px;clear:both;margin-bottom:0px;background-color:white;">'+
+    '<ul class="profileul_'+new_all[i].id+'" style="background-color:white;margin-bottom:0px;">'+
       
         
       ' <li>'+
