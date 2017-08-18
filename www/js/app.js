@@ -7029,7 +7029,7 @@ swiperQuestions = myApp.swiper('.swiper-questions', {
 //var slidenow = $(".questionsslide").height();
 $( ".availyope").hide();
 //$( ".availyo_"+ new_all[0].id ).show();
-	  $( ".smallswiper").css("height",(slidenewhight)+ "px");
+	  $( ".smallswiper").css("height","300px");
 
 
 
