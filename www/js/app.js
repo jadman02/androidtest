@@ -6663,7 +6663,7 @@ $( ".nextphoto" ).hide();
 
 
 
-'<div onclick="scrolltoTop()" style="z-index:12000;margin-top:15px;background-color:white;margin-bottom:-60px;border-radius:20px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;display:none;padding-bottom:0px;" class="prof_'+i+' infoprofile availyo_'+ new_all[i].id+'">'+
+'<div onclick="scrolltoTop()" style="z-index:12000;margin-top:15px;background-color:white;margin-bottom:-60px;border-radius:20px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;display:none;padding-bottom:0px;background-color:black;" class="prof_'+i+' infoprofile availyo_'+ new_all[i].id+'">'+
 
 
    
