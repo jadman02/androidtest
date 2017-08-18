@@ -1474,7 +1474,7 @@ nearby_all = [];
 recent_all = [];
 
 	var sharebuttons;
-	var swiperheight = $( window ).height() - 348;
+	var swiperheight = 300;
 var loginmethod = window.localStorage.getItem("loginmethod");
 	if (loginmethod == '1'){sharebuttons = '<a href="#" class="button-big button active" style="margin-bottom:10px;" onclick="appLink()">Invite Friends</a><a href="#" class="button-big button" style="margin-bottom:10px;" onclick="sharePop()">Share</a><a class="button-big button external" href="sms:&body=Check out this a new dating app in the App Store: https://fb.me/1554148374659639. Thoughts? " style="margin-bottom:10px;">Send SMS</a>';}
 	else{sharebuttons = '<a class="button-big button external" href="sms:&body=Check out a new dating app in the App Store: https://fb.me/1554148374659639. Thoughts? " style="margin-bottom:10px;">Send SMS</a>';}
