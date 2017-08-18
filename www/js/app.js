@@ -6620,7 +6620,7 @@ $( ".onlineblock" ).show();
     
     
  
- '   <div class="swiper-wrapper wrapper-questions" style="">'+
+ '   <div class="swiper-wrapper wrapper-questions" style="margin-bottom:-44px;padding-bottom:0px;">'+
 
 
   '  </div>'+
