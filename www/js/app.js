@@ -6594,14 +6594,15 @@ $( ".onlineblock" ).show();
  var photobrowserHTML = 
 
 
- '<div class="popup infopopup" style="margin-top:44px;height:calc(100% - 127px);z-index:12000;background-color:transparent;" >'+
+ '<div class="popup infopopup" style="background-color:transparent;margin-top:44px;height:calc(100% - 127px);z-index:12000;" >'+
 
        //  ' <a href="#tab1" class="prevs button disabled" style="border-radius:5px;position:absolute;left:-37px;top:50%;margin-top:-28px;height:56px;width:56px;border:0;z-index:99;color:#2196f3;background-color:rgba(247, 247, 247, 0.952941);"><i class="pe-7s-angle-left pe-4x" style="margin-left:7px;margin-top:-1px;z-index:-1"></i></a>'+
        //                ' <a href="#tab3" class="nexts button" style="border-radius:5px;position:absolute;right:-37px;width:56px;top:50%;margin-top:-26px;height:56px;color:#2196f3;border:0;z-index:99;background-color:rgba(247, 247, 247, 0.952941);"><i class="pe-7s-angle-right pe-4x" style="margin-left:-35px;margin-top:-1px;"></i></a>'+
 
 
-'<div class="swiper-container swiper-questions" style="overflow-y:scroll;height:100%;-webkit-margin-after:0px;">'+
-
+     
+'<div class="swiper-container swiper-questions" style="height:100%;overflow-y:scroll;">'+
+ 
 
  '<div style="height:100%;width:100%;overflow-x:hidden;" onclick="backtoProfile();">'+
  
@@ -6618,13 +6619,12 @@ $( ".onlineblock" ).show();
    
     
     
-   '   <div class="swiper-wrapper wrapper-questions" style="height:100%;">'+
+ 
+ '   <div class="swiper-wrapper wrapper-questions" style="">'+
 
 
   '  </div>'+
 
-
-     
 '</div>'+
 
                   '</div>'
@@ -6640,7 +6640,7 @@ $( ".nextphoto" ).hide();
    var boxcolor,displayavail,availabilityli,availabletext,iconavaill;
  iconavaill='f';boxcolor = 'width:60px;color:#007aff;opacity:1;background-color:transparent';displayavail='none';availabletext='';
    
-   $( ".wrapper-questions" ).append('<div class="swiper-slide questionsslide slideinfo_'+new_all[i].id+'">'+
+   $( ".wrapper-questions" ).append('<div class="swiper-slide slideinfo_'+new_all[i].id+'" style="height:100%;">'+
 
 
 
@@ -6663,7 +6663,7 @@ $( ".nextphoto" ).hide();
 
 
 
-'<div onclick="scrolltoTop()" style="z-index:12000;margin-top:15px;background-color:white;margin-bottom:-60px;border-radius:20px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;display:none;padding-bottom:0px;height:100%;" class="prof_'+i+' infoprofile availyo_'+ new_all[i].id+'">'+
+'<div onclick="scrolltoTop()" style="z-index:12000;margin-top:15px;background-color:white;border-radius:20px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;margin-bottom:20px;display:none;" class="prof_'+i+' infoprofile availyo_'+ new_all[i].id+'">'+
 
 
    
@@ -6673,8 +6673,8 @@ $( ".nextphoto" ).hide();
 
 
 
-'<div class="list-block onscreenlistblock" style="margin-top:0px;clear:both;padding-bottom:0px;background-color:white;">'+
-    '<ul class="profileul_'+new_all[i].id+'" style="background-color:white;margin-bottom:0px;padding:0;">'+
+'<div class="list-block" style="margin-top:0px;clear:both;">'+
+    '<ul class="profileul_'+new_all[i].id+'" style="background-color:transparent">'+
       
         
       ' <li>'+
@@ -7012,18 +7012,8 @@ swiperQuestions = myApp.swiper('.swiper-questions', {
   myPhotoBrowser.swiper.setWrapperTranslate(0);
   $( ".infoprofile").hide();
 	  $( ".adown" ).css( "opacity","1" );
-	  
-
-
-	//questionsslide  
-	  
-	  
-  var wrapperheightshould = $(".prof_" + swiper.activeIndex).height() - 300;
-//	  alert(wrapperheightshould);
-//$( ".wrapper-questions").css("height",(wrapperheightshould - 200)+ "px");
-
-	  $( ".wrapper-questions").css("height",(wrapperheightshould)+ "px");
-//var slidenow = $(".questionsslide").height();
+  var wrapperheightshould = $(".prof_" + swiper.activeIndex).height();
+$( ".wrapper-questions").css("height",(wrapperheightshould - 150)+ "px");
 $( ".availyope").hide();
 //$( ".availyo_"+ new_all[0].id ).show();
 
@@ -7043,9 +7033,10 @@ if (new_all.length === 1){swiper.lockSwipes();myPhotoBrowser.swiper.lockSwipes()
 
 
 
+
 var wrapperheightshould = $(".prof_" + swiper.activeIndex).height();
-$( ".wrapper-questions").css("height",(wrapperheightshould - 200)+ "px");
-alert(wrapperheightshould);
+$( ".wrapper-questions").css("height",(wrapperheightshould - 150)+ "px");
+
 
 if(comingback === 1){   
    if (swiper.activeIndex > swiper.previousIndex){myPhotoBrowser.swiper.slideNext();}
