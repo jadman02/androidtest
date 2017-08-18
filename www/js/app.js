@@ -6602,7 +6602,7 @@ $( ".onlineblock" ).show();
 
      
 '<div class="swiper-container swiper-questions" style="overflow-y:scroll;height:100%;background-color:yellow;">'+
- '<div class="smallswiper">'+
+ '<div class="smallswiper" style="overflow:hidden;">'+
 
  '<div style="height:100%;width:100%;overflow-x:hidden;" onclick="backtoProfile();">'+
  
