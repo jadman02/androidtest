@@ -7023,7 +7023,8 @@ swiperQuestions = myApp.swiper('.swiper-questions', {
 
 	  $( ".wrapper-questions").css("height",(wrapperheightshould)+ "px");
 	  $( ".wrapper-questions").css("margin-bottom","-40px");
-
+var slidenow = $(".questionsslide").height();
+	  alert(slidenow);
 $( ".availyope").hide();
 //$( ".availyo_"+ new_all[0].id ).show();
 
