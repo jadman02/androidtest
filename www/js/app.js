@@ -3242,11 +3242,13 @@ if (rightdates[i].created_uid != f_uid) {picturesrc = rightdates[i].from_picture
 
  var unix = Math.round(+new Date()/1000);
 
-   var c = new Date(rightdates[i].chat_expire*1000 - 36000000);
+   var c = new Date(rightdates[i].chat_expire*1000 + 2000);
     
-
+alert(c);
 var cday = weekday[c.getDay()];
 
+	 alert(cday);
+	 
 if ((rightdates[i].created_uid == f_uid || rightdates[i].received_uid == f_uid) && (rightdates[i].chat_expire > Number(unix)) ){
 
 
