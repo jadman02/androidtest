@@ -7019,7 +7019,7 @@ swiperQuestions = myApp.swiper('.swiper-questions', {
 
 	//questionsslide  
 	  
-	  var slidenewhight = $(".prof_" + swiper.activeIndex).height();
+	  var slidenewhight = $(".onscreenlistblock:visible").height();
 	  alert(slidenewhight);
   var wrapperheightshould = $(".prof_" + swiper.activeIndex).height() - 300;
 //	  alert(wrapperheightshould);
