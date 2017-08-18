@@ -6602,7 +6602,7 @@ $( ".onlineblock" ).show();
 
      
 '<div class="swiper-container swiper-questions" style="overflow-y:scroll;height:100%;background-color:yellow;">'+
- '<div class="smallswiper" style="overflow:hidden;">'+
+
 
  '<div style="height:100%;width:100%;overflow-x:hidden;" onclick="backtoProfile();">'+
  
@@ -6619,7 +6619,7 @@ $( ".onlineblock" ).show();
    
     
     
- 
+  '<div class="smallswiper" style="overflow:hidden;">'+
  '   <div class="swiper-wrapper wrapper-questions" style="height:100%;background-color:blue;">'+
 
 
@@ -7019,7 +7019,7 @@ swiperQuestions = myApp.swiper('.swiper-questions', {
 
 	//questionsslide  
 	  
-	  var slidenewhight = $(".prof_" + swiper.activeIndex).height() + $(document).height();
+	  var slidenewhight = $(".prof_" + swiper.activeIndex).height();
 	  alert(slidenewhight);
   var wrapperheightshould = $(".prof_" + swiper.activeIndex).height() - 300;
 //	  alert(wrapperheightshould);
