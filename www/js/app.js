@@ -7017,7 +7017,7 @@ swiperQuestions = myApp.swiper('.swiper-questions', {
 
 	//questionsslide  
 	  
-  var wrapperheightshould = $(".prof_" + swiper.activeIndex).height() + $(document).height();
+  var wrapperheightshould = $(".prof_" + swiper.activeIndex).height();
 //	  alert(wrapperheightshould);
 //$( ".wrapper-questions").css("height",(wrapperheightshould - 200)+ "px");
 
