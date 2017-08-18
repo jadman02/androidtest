@@ -6604,7 +6604,7 @@ $( ".onlineblock" ).show();
 '<div class="swiper-container swiper-questions" style="height:100%;overflow-y:scroll;margin-bottom:-44px !important;padding-bottom:-44px !important;background-color:yellow;">'+
  
 
- '<div style="height:calc(100% - 44px);width:100%;overflow-x:hidden;" onclick="backtoProfile();">'+
+ '<div style="height:100%;width:100%;overflow-x:hidden;" onclick="backtoProfile();">'+
  
 
 
@@ -6620,7 +6620,7 @@ $( ".onlineblock" ).show();
     
     
  
- '   <div class="swiper-wrapper wrapper-questions" style="border-bottom:70px solid white;background-color:blue;">'+
+ '   <div class="swiper-wrapper wrapper-questions" style="height:100%;border-bottom:70px solid white;background-color:blue;">'+
 
 
   '  </div>'+
@@ -6663,7 +6663,7 @@ $( ".nextphoto" ).hide();
 
 
 
-'<div onclick="scrolltoTop()" style="z-index:12000;margin-top:15px;background-color:white;margin-bottom:-60px;border-radius:20px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;display:none;padding-bottom:0px;background-color:black;" class="prof_'+i+' infoprofile availyo_'+ new_all[i].id+'">'+
+'<div onclick="scrolltoTop()" style="z-index:12000;margin-top:15px;background-color:white;margin-bottom:-60px;border-radius:20px;border-bottom-right-radius:0px;border-bottom-left-radius:0px;display:none;padding-bottom:0px;height:100%;background-color:black;" class="prof_'+i+' infoprofile availyo_'+ new_all[i].id+'">'+
 
 
    
