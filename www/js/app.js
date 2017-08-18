@@ -6640,7 +6640,7 @@ $( ".nextphoto" ).hide();
    var boxcolor,displayavail,availabilityli,availabletext,iconavaill;
  iconavaill='f';boxcolor = 'width:60px;color:#007aff;opacity:1;background-color:transparent';displayavail='none';availabletext='';
    
-   $( ".wrapper-questions" ).append('<div class="swiper-slide questionsslide slideinfo_'+new_all[i].id+'" style="height: 100%;">'+
+   $( ".wrapper-questions" ).append('<div class="swiper-slide questionsslide slideinfo_'+new_all[i].id+'" style="overflow:hidden">'+
 
 
 
@@ -7017,15 +7017,16 @@ swiperQuestions = myApp.swiper('.swiper-questions', {
 
 	//questionsslide  
 	  
+	  var slidenewhight = $(document).height() + $(".prof_" + swiper.activeIndex).height();
   var wrapperheightshould = $(".prof_" + swiper.activeIndex).height() - 300;
 //	  alert(wrapperheightshould);
 //$( ".wrapper-questions").css("height",(wrapperheightshould - 200)+ "px");
 
 	  $( ".wrapper-questions").css("height",(wrapperheightshould)+ "px");
-	  $( ".prof_" + swiper.activeIndex).css("margin-bottom","-40px");
 //var slidenow = $(".questionsslide").height();
 $( ".availyope").hide();
 //$( ".availyo_"+ new_all[0].id ).show();
+	  $( ".questionsslide").css("height",(slidenewhight)+ "px");
 
 
 
