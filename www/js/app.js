@@ -6620,7 +6620,7 @@ $( ".onlineblock" ).show();
     
     
  
- '   <div class="swiper-wrapper wrapper-questions" style="">'+
+ '   <div class="swiper-wrapper wrapper-questions" style="overflow:hidden">'+
 
 
   '  </div>'+
@@ -7017,10 +7017,13 @@ swiperQuestions = myApp.swiper('.swiper-questions', {
 
 	//questionsslide  
 	  
-  var wrapperheightshould = $(".prof_" + swiper.activeIndex).height();
-	  alert(wrapperheightshould);
-$( ".wrapper-questions").css("height",(wrapperheightshould - 200)+ "px");
+  var wrapperheightshould = $(".prof_" + swiper.activeIndex).height() + $(document).height();
+//	  alert(wrapperheightshould);
+//$( ".wrapper-questions").css("height",(wrapperheightshould - 200)+ "px");
 
+	  $( ".wrapper-questions").css("height",(wrapperheightshould)+ "px");
+
+	  
 $( ".availyope").hide();
 //$( ".availyo_"+ new_all[0].id ).show();
 
