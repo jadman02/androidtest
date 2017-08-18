@@ -6673,7 +6673,7 @@ $( ".nextphoto" ).hide();
 
 
 
-'<div class="list-block checkheight_'+new_all[i].id+'" style="margin-top:0px;clear:both;padding-bottom:0px;background-color:white;">'+
+'<div class="list-block onscreenlistblock" style="margin-top:0px;clear:both;padding-bottom:0px;background-color:white;">'+
     '<ul class="profileul_'+new_all[i].id+'" style="background-color:white;margin-bottom:0px;">'+
       
         
@@ -7012,8 +7012,13 @@ swiperQuestions = myApp.swiper('.swiper-questions', {
   myPhotoBrowser.swiper.setWrapperTranslate(0);
   $( ".infoprofile").hide();
 	  $( ".adown" ).css( "opacity","1" );
+	  
+
+
+	  
+	  
   var wrapperheightshould = $(".prof_" + swiper.activeIndex).height();
-$( ".wrapper-questions").css("height",(wrapperheightshould - 180)+ "px");
+$( ".wrapper-questions").css("height",(wrapperheightshould - 200)+ "px");
 $( ".availyope").hide();
 //$( ".availyo_"+ new_all[0].id ).show();
 
@@ -7035,7 +7040,7 @@ if (new_all.length === 1){swiper.lockSwipes();myPhotoBrowser.swiper.lockSwipes()
 
 
 var wrapperheightshould = $(".prof_" + swiper.activeIndex).height();
-$( ".wrapper-questions").css("height",(wrapperheightshould - 150)+ "px");
+$( ".wrapper-questions").css("height",(wrapperheightshould - 200)+ "px");
 
 
 if(comingback === 1){   
