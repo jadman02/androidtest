@@ -6601,7 +6601,7 @@ $( ".onlineblock" ).show();
 
 
      
-'<div class="swiper-container swiper-questions" style="height:100%;overflow-y:scroll;">'+
+'<div class="swiper-container swiper-questions" style="height:calc(100% - 44px);overflow-y:scroll;">'+
  
 
  '<div style="height:100%;width:100%;overflow-x:hidden;" onclick="backtoProfile();">'+
@@ -6673,7 +6673,7 @@ $( ".nextphoto" ).hide();
 
 
 
-'<div class="list-block onscreenlistblock" style="margin-top:0px;clear:both;padding-bottom:20px;background-color:white;">'+
+'<div class="list-block onscreenlistblock" style="margin-top:0px;clear:both;padding-bottom:0px;background-color:white;">'+
     '<ul class="profileul_'+new_all[i].id+'" style="background-color:white;margin-bottom:0px;padding:0;">'+
       
         
