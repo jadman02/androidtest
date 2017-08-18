@@ -6640,7 +6640,7 @@ $( ".nextphoto" ).hide();
    var boxcolor,displayavail,availabilityli,availabletext,iconavaill;
  iconavaill='f';boxcolor = 'width:60px;color:#007aff;opacity:1;background-color:transparent';displayavail='none';availabletext='';
    
-   $( ".wrapper-questions" ).append('<div class="swiper-slide slideinfo_'+new_all[i].id+'" style="height: calc(100% - 44px);overflow:hidden;">'+
+   $( ".wrapper-questions" ).append('<div class="swiper-slide questionsslide slideinfo_'+new_all[i].id+'" style="height: 100%;">'+
 
 
 
@@ -7015,9 +7015,10 @@ swiperQuestions = myApp.swiper('.swiper-questions', {
 	  
 
 
-	  
+	//questionsslide  
 	  
   var wrapperheightshould = $(".prof_" + swiper.activeIndex).height();
+	  alert(wrapperheightshould);
 $( ".wrapper-questions").css("height",(wrapperheightshould - 200)+ "px");
 
 $( ".availyope").hide();
