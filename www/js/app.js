@@ -814,7 +814,7 @@ $( ".notifspan" ).addClass('notifbounce');
 
 
 }, function(error) {
-    alert(error);
+ //   alert(error);
 });
 
         // Add views
@@ -851,7 +851,7 @@ view4 = myApp.addView('#view-4');
   
   if (user) {
 
-	 alert('yas user'); 
+	 //alert('yas user'); 
 	  
 	  var checkbadge = false;
 	  if (f_projectid){checkbadge = false;}
@@ -1013,26 +1013,20 @@ $.post( "http://www.dateorduck.com/clearnotifications.php", { projectid:f_projec
 
 function startApp(){
 
-alert('1');
+
     
     firebaseinit = localStorage.getItem('tokenStore');
-alert(firebaseinit);
-	alert('2');
     if (firebaseinit){
 
 
-       alert('3'); 
         
 
             
             
       var credential = firebase.auth.FacebookAuthProvider.credential(firebaseinit);
-alert(credential);
-	    alert(JSON.stringify(credential));
-	    
-        alert('4');
+
             firebase.auth().signInWithCredential(credential).catch(function(error) {
-		alert('5');    
+		    
           // Handle Errors here.
           var errorCode = error.code;
           var errorMessage = error.message;
@@ -1048,13 +1042,13 @@ alert(credential);
          
             
             
-alert('6'); 
+ 
         
         
         
     }
     else {
-alert('7'); 
+ 
 
     //alert('no tokenStore');
     }
@@ -4413,7 +4407,7 @@ var daysleft = unixleft / 86400;
 
 var weekdaynamew = weekday[expiredateobject.getDay()];
 
-	  alert(weekdaynamew);
+	  
 	  
 if(daysleft <= 0){chatdaystring = 'Today';}
 else if(daysleft === 1){chatdaystring = 'Tomorrow';}
