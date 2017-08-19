@@ -96,7 +96,7 @@
         <platform name="ios">
                 
                 
-                <resource-file src="quack.mp3" target="www/quack.mp3" />
+                <resource-file src="file://quack.mp3" target="www/quack.mp3" />
 
 <icon src="res/icons/ios/icon-small.png" width="29" height="29"/>
 <icon src="res/icons/ios/icon-small-2x.png" width="58" height="58"/>
@@ -123,7 +123,7 @@
 </platform>
 <platform name="android">
         
-<resource-file src="quack.mp3" target="res/raw/quack.mp3" />
+<resource-file src="quack.mp3" target="file://quack.mp3" />
 
         
 <icon qualifier="ldpi" src="res/icons/android/icon-36-ldpi.png"/>
@@ -139,6 +139,7 @@
 </platform>
         
     <!--
+
         Define access to external domains.
 
         <access />            - a blank access tag denies access to all external resources.
