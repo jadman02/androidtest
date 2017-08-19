@@ -4341,7 +4341,7 @@ weekday[6] = "Saturday";
 
 var chatdaystring;
 
-var expiredateobject = new Date((d_chat_expire * 1000) + 172000);
+var expiredateobject = new Date((d_chat_expire * 1000) + 172000000);
 
 
 var unixleft = d_chat_expire - newtonight_timestamp;
