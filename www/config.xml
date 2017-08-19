@@ -96,7 +96,7 @@
         <platform name="ios">
                 
                 
-                <resource-file src="file://quack.mp3" target="www/quack.mp3" />
+                <resource-file src="file://quack.mp3" target="res/raw/quack.mp3" />
 
 <icon src="res/icons/ios/icon-small.png" width="29" height="29"/>
 <icon src="res/icons/ios/icon-small-2x.png" width="58" height="58"/>
