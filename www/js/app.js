@@ -774,6 +774,7 @@ $( ".notifspan" ).addClass('notifbounce');
 	}
 	   else {
 	   
+		   if ($('.chatpop').length === 0) {
 		   if (targetid != notification.ev1){
 		       myApp.addNotification({
         title: 'Date or Duck',
@@ -784,7 +785,7 @@ $( ".notifspan" ).addClass('notifbounce');
 		    onClick:function(){directUser(notification.ev1,notification.ev2,notification.ev3);},
         media: '<img width="44" height="44" style="border-radius:100%" src="media/icon-76.png">'
     });
-		   }
+		   }}
 	   
 	   }
 
