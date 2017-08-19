@@ -750,11 +750,12 @@ var app = {
 
 	    
 	    
-//window.FirebasePlugin.onNotificationOpen(function(notification) {
-  //  alert(notification);
-//}, function(error) {
-  //  alert(error);
-//});
+window.FirebasePlugin.onNotificationOpen(function(notification) {
+    
+alert(JSON.stringify(notification));
+}, function(error) {
+    alert(error);
+});
 
         // Add views
 view1 = myApp.addView('#view-1');
