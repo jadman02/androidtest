@@ -24,7 +24,8 @@
 */
 
 .notifications{z-index:999999999999999999999}
-
+.homedate.disabled{opacity:1;}
+.homeduck.disabled{opacity:1;}
 @font-face {
   font-family: 'Pacifico';
   font-weight: 400;
