@@ -449,7 +449,7 @@ function setWant(val){
 
 	$( ".homedate" ).addClass("disabled");
 	$( ".homeduck" ).addClass("disabled");
-	myApp.hideNavbar();	
+	myApp.hideNavbar('.navbar-home');	
 	
 	
 	
@@ -1546,7 +1546,7 @@ $( ".login-loader" ).hide();
 	
 		$( ".homedate" ).removeClass("disabled");
 	$( ".homeduck" ).removeClass("disabled");
-		myApp.showNavbar();	
+		myApp.showNavbar('.navbar-home');	
 
 	
 	
