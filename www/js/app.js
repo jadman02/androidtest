@@ -1488,7 +1488,7 @@ var loginmethod = window.localStorage.getItem("loginmethod");
 	else{
 	$('.content-here-1').html(
 
-		'<div class="no-results-div" style="background-color:white;z-index:30000000;text-align:center;margin:0 auto;width:300px;position:absolute;top:54px;left:50%;margin-left:-150px;">'+
+		'<div class="no-results-div" style="background-color:white;z-index:30000000;text-align:center;margin:0 auto;width:300px;position:absolute;top:0px;left:50%;margin-left:-150px;">'+
 '<div class="topdiv">'+
 		 
      // '<h3>Get Quacking!</h3>'+
