@@ -1556,7 +1556,7 @@ $( ".login-loader" ).hide();
 
 	
 	
-	}, 1000);
+	}, 2000);
 
 	
    return false;
@@ -1628,7 +1628,7 @@ var loginmethod = window.localStorage.getItem("loginmethod");
 	$( ".homeduck" ).removeClass("disabled");
 	myApp.showNavbar('.navbar-home','false');
 	
-	}, 1000);
+	}, 2000);
 	   
 	   return false;
    
@@ -2026,7 +2026,7 @@ if (recent_all[0].id == graphid || recent_all[1].id == graphid || recent_all[2].
 	$( ".homeduck" ).removeClass("disabled");
 	myApp.showNavbar('.navbar-home','false');
 	
-	}, 1000);
+	}, 2000);
 	
 if (random_all.length === 0){
 
