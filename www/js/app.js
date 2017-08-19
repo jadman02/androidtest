@@ -1483,11 +1483,12 @@ var loginmethod = window.localStorage.getItem("loginmethod");
 	if ($('.topdiv').length > 0) {}
 	else{
 	$('.content-here-1').html(
-    '<div class="no-results-div" style="background-color:white;z-index:30000000;text-align:center;margin:0 auto;width:300px;position:absolute;top:0px;left:50%;margin-left:-150px;margin-top:54px;">'+
-'<div class="topdiv">'+
-		 '<div style="width:100%;text-align:center;margin-top:0px;height:44px;background-color:#ccc;">'+
+   '<div style="width:100%;text-align:center;margin-top:0px;height:44px;background-color:#ccc;">'+
           '<div class="preloader" style="margin: 0 auto;margin-top:5px;"></div>'+
 				'</div>'+
+		'<div class="no-results-div" style="background-color:white;z-index:30000000;text-align:center;margin:0 auto;width:300px;position:absolute;top:0px;left:50%;margin-left:-150px;">'+
+'<div class="topdiv">'+
+		 
      // '<h3>Get Quacking!</h3>'+
 				'    <div class="content-block-title" style="width:100%;text-align:center;margin-top:15px;margin-left:0px;">Get Quacking, It\'s Easy</div>'+
 
