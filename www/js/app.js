@@ -4341,10 +4341,10 @@ weekday[6] = "Saturday";
 
 var chatdaystring;
 
-var expiredateobject = new Date((d_chat_expire * 1000) + 172000000);
+var expiredateobject = new Date((d_chat_expire * 1000));
 
 
-var unixleft = d_chat_expire - newtonight_timestamp;
+var unixleft = d_chat_expire - newtonight_timestamp + 86400;
 
 var daysleft = unixleft / 86400;
 
@@ -4352,6 +4352,8 @@ var daysleft = unixleft / 86400;
 
 var weekdaynamew = weekday[expiredateobject.getDay()];
 
+	  alert(weekdaynamew);
+	  
 if(daysleft <= 0){chatdaystring = 'Today';}
 else if(daysleft === 1){chatdaystring = 'Tomorrow';}
 else chatdaystring = weekdaynamew;
