@@ -775,6 +775,21 @@ $( ".notifspan" ).addClass('notifbounce');
 	   else {
 	   
 		   if ($('.chatpop').length === 0) {
+		   
+			   myApp.addNotification({
+        title: 'Date or Duck',
+		    subtitle:notification.title,
+        message: notification.body,
+		    hold:2000,
+		    closeOnClick:true,
+		    onClick:function(){directUser(notification.ev1,notification.ev2,notification.ev3);},
+        media: '<img width="44" height="44" style="border-radius:100%" src="media/icon-76.png">'
+    });
+		   
+		   }
+		   
+		   else {
+		   
 		   if (targetid != notification.ev1){
 		       myApp.addNotification({
         title: 'Date or Duck',
@@ -785,7 +800,12 @@ $( ".notifspan" ).addClass('notifbounce');
 		    onClick:function(){directUser(notification.ev1,notification.ev2,notification.ev3);},
         media: '<img width="44" height="44" style="border-radius:100%" src="media/icon-76.png">'
     });
-		   }}
+		   }
+			   
+		   
+		   }
+		   
+		   
 	   
 	   }
 
