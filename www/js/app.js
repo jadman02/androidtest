@@ -1620,7 +1620,7 @@ var loginmethod = window.localStorage.getItem("loginmethod");
 	
 		$( ".homedate" ).removeClass("disabled");
 	$( ".homeduck" ).removeClass("disabled");
-	
+	myApp.showNavbar('.navbar-home');
 	
 	}, 2000);
 	   
@@ -2018,7 +2018,7 @@ if (recent_all[0].id == graphid || recent_all[1].id == graphid || recent_all[2].
 	
 		$( ".homedate" ).removeClass("disabled");
 	$( ".homeduck" ).removeClass("disabled");
-	
+	myApp.showNavbar('.navbar-home');
 	
 	}, 2000);
 	
