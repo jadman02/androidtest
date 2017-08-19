@@ -1070,7 +1070,7 @@ $$('.panel-right').on('panel:closed', function () {
 
 
 
-
+/*
 // Pull to refresh content
 var ptrContent = $$('.pull-to-refresh-content-1');
  
@@ -1084,12 +1084,9 @@ var firstupdate = false;
 	
 
 
-// Add 'refresh' listener on it
-ptrContent.on('ptr:refresh', function (e) {
-    // Emulate 2s loading
-    //loaded = false;
 
-	//if ($('.no-results-div').length > 0) {myApp.pullToRefreshDone();return false;}
+ptrContent.on('ptr:refresh', function (e) {
+
 	
 	var timesincelastupdate = Math.round(+new Date()/1000) - geoupdate;
 
@@ -1187,6 +1184,8 @@ else {slidecontent = '<div class="age_'+random_all[i].age+' swiper-slide slide_'
         myApp.pullToRefreshDone('.pull-to-refresh-content-1');
     }, 1000);
 });
+
+*/
 
 // Pull to refresh content
 var ptrContent = $$('.pull-to-refresh-content-2');
