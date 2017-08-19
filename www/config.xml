@@ -118,6 +118,10 @@
 <splash src="res/screens/ios/screen-ipad-portrait-2x.png" width="1536" height="2048"/>
 </platform>
 <platform name="android">
+        
+        <resource-file src="www/quack.mp3" target="/res/raw/quack.mp3" />
+
+        
 <icon qualifier="ldpi" src="res/icons/android/icon-36-ldpi.png"/>
 <icon qualifier="mdpi" src="res/icons/android/icon-48-mdpi.png"/>
 <icon qualifier="hdpi" src="res/icons/android/icon-72-hdpi.png"/>
