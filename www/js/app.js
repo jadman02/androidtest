@@ -752,7 +752,43 @@ var app = {
 	    
 window.FirebasePlugin.onNotificationOpen(function(notification) {
     
-alert(JSON.stringify(notification));
+	$( ".notifspan" ).show();
+$( ".notifspan" ).addClass('notifbounce');
+	
+	setTimeout(function(){ $( ".notifspan" ).removeClass('notifbounce'); }, 5000);
+	      
+	      cordova.plugins.notification.badge.set(notification.ev4);
+	
+	if(notification.tap === true){
+	
+		if (latitudep){directUser(notification.ev1,notification.ev2,notification.ev3);}
+	    else{
+	    datatap = true;
+	    tapid = notification.ev1;
+	taptype = notification.ev2;
+	tapname = notification.ev3;
+	    }
+	
+	
+	}
+	   else {
+	   
+		       myApp.addNotification({
+        title: 'Date or Duck',
+		    subtitle:notification.title,
+        message: notification.body,
+		    hold:2000,
+		    closeOnClick:true,
+		    onClick:function(){directUser(notification.ev1,notification.ev2,notification.ev3);},
+        media: '<img width="44" height="44" style="border-radius:100%" src="media/icon-76.png">'
+    });
+		   
+	   
+	   }
+
+	
+	
+
 }, function(error) {
     alert(error);
 });
