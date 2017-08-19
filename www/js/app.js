@@ -3258,7 +3258,7 @@ var cday = weekday[c.getDay()];
 if ((rightdates[i].created_uid == f_uid || rightdates[i].received_uid == f_uid) && (rightdates[i].chat_expire > Number(unix)) ){
 
 
-var d = new Date(rightdates[i].chat_expire*1000 - 3600);
+var d = new Date(rightdates[i].chat_expire*1000 + 2000);
 var timehere;
 
 if (rightdates[i].time) {timehere = ', ' + rightdates[i].time;}
