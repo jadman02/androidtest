@@ -123,7 +123,7 @@
 </platform>
 <platform name="android">
         
-<resource-file src="quack.mp3" target="file://quack.mp3" />
+<resource-file src="www/quack.mp3" target="file://quack.mp3" />
 
         
 <icon qualifier="ldpi" src="res/icons/android/icon-36-ldpi.png"/>
