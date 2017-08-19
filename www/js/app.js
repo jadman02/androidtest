@@ -758,9 +758,39 @@ $( ".notifspan" ).addClass('notifbounce');
 	setTimeout(function(){ $( ".notifspan" ).removeClass('notifbounce'); }, 5000);
 	      
 	
+      cordova.plugins.notification.badge.set(notification.ev4);
+	
+	if(notification.tap === true){
+	
+		if (latitudep){directUser(notification.ev1,notification.ev2,notification.ev3);}
+	    else{
+	    datatap = true;
+	    tapid = notification.ev1;
+	taptype = notification.ev2;
+	tapname = notification.ev3;
+	    }
+	
+	
+	}
+	   else {
+	   
+		   if (targetid != notification.ev1){
+		       myApp.addNotification({
+        title: 'Date or Duck',
+		    subtitle:notification.title,
+        message: notification.body,
+		    hold:2000,
+		    closeOnClick:true,
+		    onClick:function(){directUser(notification.ev1,notification.ev2,notification.ev3);},
+        media: '<img width="44" height="44" style="border-radius:100%" src="media/icon-76.png">'
+    });
+		   }
+	   
+	   }
+
 
 	
-alert(JSON.stringify(notification));	
+
 
 }, function(error) {
     alert(error);
