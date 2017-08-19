@@ -1552,7 +1552,7 @@ $( ".login-loader" ).hide();
 	
 		$( ".homedate" ).removeClass("disabled");
 	$( ".homeduck" ).removeClass("disabled");
-		myApp.showNavbar('.navbar-home',false);	
+		myApp.showNavbar('.navbar-home','false');	
 
 	
 	
@@ -1626,7 +1626,7 @@ var loginmethod = window.localStorage.getItem("loginmethod");
 	
 		$( ".homedate" ).removeClass("disabled");
 	$( ".homeduck" ).removeClass("disabled");
-	myApp.showNavbar('.navbar-home',false);
+	myApp.showNavbar('.navbar-home','false');
 	
 	}, 1000);
 	   
@@ -2024,7 +2024,7 @@ if (recent_all[0].id == graphid || recent_all[1].id == graphid || recent_all[2].
 	
 		$( ".homedate" ).removeClass("disabled");
 	$( ".homeduck" ).removeClass("disabled");
-	myApp.showNavbar('.navbar-home',false);
+	myApp.showNavbar('.navbar-home','false');
 	
 	}, 1000);
 	
