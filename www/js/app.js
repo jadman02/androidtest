@@ -8342,7 +8342,7 @@ myList.clearCache();
 	   $( ".datetoolbar" ).show();
 
 	   canloadchat = false;
-          var g = new Date(d_chat_expire*1000 - 3600);
+          var g = new Date(d_chat_expire*1000 + 3600);
 
 	   
 	    $( ".profileyomain" ).hide();
