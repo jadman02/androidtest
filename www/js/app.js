@@ -3250,10 +3250,10 @@ if (rightdates[i].created_uid != f_uid) {picturesrc = rightdates[i].from_picture
 
    var c = new Date(rightdates[i].chat_expire*1000 + 2000);
     
-alert(c);
+
 var cday = weekday[c.getDay()];
 
-	 alert(cday);
+
 	 
 if ((rightdates[i].created_uid == f_uid || rightdates[i].received_uid == f_uid) && (rightdates[i].chat_expire > Number(unix)) ){
 
@@ -4341,7 +4341,7 @@ weekday[6] = "Saturday";
 
 var chatdaystring;
 
-var expiredateobject = new Date((d_chat_expire * 1000) - 86400);
+var expiredateobject = new Date((d_chat_expire * 1000) + 2000);
 
 
 var unixleft = d_chat_expire - newtonight_timestamp;
