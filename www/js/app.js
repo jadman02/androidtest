@@ -1487,9 +1487,7 @@ var loginmethod = window.localStorage.getItem("loginmethod");
 	if ($('.topdiv').length > 0) {}
 	else{
 	$('.content-here-1').html(
-   '<div style="width:100%;text-align:center;margin-top:0px;height:44px;background-color:#ccc;position:absolute;top:0px;">'+
-          '<div class="preloader" style="margin: 0 auto;margin-top:10px;"></div>'+
-				'</div>'+
+
 		'<div class="no-results-div" style="background-color:white;z-index:30000000;text-align:center;margin:0 auto;width:300px;position:absolute;top:54px;left:50%;margin-left:-150px;">'+
 '<div class="topdiv">'+
 		 
@@ -1630,7 +1628,7 @@ var loginmethod = window.localStorage.getItem("loginmethod");
 	$( ".homeduck" ).removeClass("disabled");
 	myApp.showNavbar('.navbar-home');
 	
-	}, 2000);
+	}, 1000);
 	   
 	   return false;
    
@@ -2028,7 +2026,7 @@ if (recent_all[0].id == graphid || recent_all[1].id == graphid || recent_all[2].
 	$( ".homeduck" ).removeClass("disabled");
 	myApp.showNavbar('.navbar-home');
 	
-	}, 2000);
+	}, 1000);
 	
 if (random_all.length === 0){
 
