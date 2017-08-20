@@ -4399,7 +4399,7 @@ var chatdaystring;
 var expiredateobject = new Date((d_chat_expire * 1000) + 86400);
 
 
-var unixleft = d_chat_expire - newtonight_timestamp + 86400;
+var unixleft = d_chat_expire - newtonight_timestamp;
 
 var daysleft = unixleft / 86400;
 
