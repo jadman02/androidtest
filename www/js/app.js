@@ -4457,9 +4457,16 @@ if (d_time){
 
 var lowertime = d_time.toLowerCase()
 
-if (chatdaystring == 'today'){$( ".chatdaystringdiv").empty();$( ".chatafternavbar").append('this ' + lowertime);}
+if (chatdaystring == 'Today'){$( ".chatdaystringdiv").empty();
+			      
+if (d_time == 'Morning'){$( ".chatafternavbar").append('this morning!');}
+if (d_time == 'Afternon'){$( ".chatafternavbar").append('this afternoon!');}
+if (d_time == 'Midday'){$( ".chatafternavbar").append('at midday!');}
+if (d_time == 'Evening'){$( ".chatafternavbar").append('this evening!');}
+			     
+			     }
 else {
-$( ".chatafternavbar").append(' ' + d_time);}
+$( ".chatafternavbar").append(', ' + d_time);}
 }
 
 //if (d_interest && d_type =='duck'){
