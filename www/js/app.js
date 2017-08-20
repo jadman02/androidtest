@@ -4270,7 +4270,7 @@ var popupHTML = '<div class="popup chatpop">'+
 
 
 ' <div class="toolbar-inner yes-inner" style="background-color:rgba(247, 247, 248,0.9);margin-top:-10px;height:54px;padding-bottom:10px;display:none;text-align:center;">'+
-                                              '<a href="#" onclick="cancelDate()" class="link" style="height:44px;color:white;background-color:#ff3b30;width: 33%;"><span style="margin: 0 auto;">Cancel</span></a>'+
+                                              '<a href="#" onclick="cancelDate(0)" class="link" style="height:44px;color:white;background-color:#ff3b30;width: 33%;"><span style="margin: 0 auto;">Cancel</span></a>'+
                                               '<a href="#" onclick="request()" class="link" style="height:44px;color:white;background-color:#2196f3;width:33%;"><span style="margin: 0 auto;">Change</span></a>'+
 
                        '<a href="#" onclick="acceptDate()" class="link" style="height:44px;color:white;background-color:#4cd964;width:33%;"><span style="margin: 0 auto;">Confirm</span></a>'+
@@ -4280,7 +4280,7 @@ var popupHTML = '<div class="popup chatpop">'+
 
   
  ' <div class="toolbar-inner sender-inner" style="background-color:rgba(247, 247, 248,0.9);margin-top:-10px;height:54px;padding-bottom:10px; display:none;text-align:center;">'+
-                       '<a href="#" onclick="cancelDate()" class="link" style="height:44px;color:white;background-color:#ff3b30;width: 50%;"><span style="margin: 0 auto;">Cancel</span></a>'+
+                       '<a href="#" onclick="cancelDate(0)" class="link" style="height:44px;color:white;background-color:#ff3b30;width: 50%;"><span style="margin: 0 auto;">Cancel</span></a>'+
                        '<a href="#" onclick="request()" class="link" style="height:44px;color:white;background-color:#2196f3;width: 50%;"><span style="margin: 0 auto;">Change</span></a>'+
 
   '</div>'+
@@ -4339,6 +4339,14 @@ $( "#centerholder" ).append(centerdiv);
 myApp.sizeNavbars();
 //$( "#centerholder" ).remove();
 
+	
+if (datealertvar === true){
+
+  firebase.database().ref("dates/" + f_uid +'/' + targetid).off('value', datealert);
+ 
+
+
+}
 
 if (datealertvar === false) {
 datealertvar = true;
@@ -9160,7 +9168,7 @@ var t_unix = Math.round(+new Date()/1000);
     
 }
 
-function cancelDate(){
+function cancelDate(cancelnotif){
 // Create a reference to the file to delete
 $( ".dateheader" ).hide();
 $( ".sender-inner" ).hide();
@@ -9213,6 +9221,7 @@ firebase.database().ref("dates/" + targetid +'/' + f_uid).remove().then(function
   // Uh-oh, an error occurred!
 });
 
+	if(cancelnotif){
 	sendNotification(targetid,6);
 
 	
@@ -9261,6 +9270,8 @@ newNotification();
 
 });
 
+	}
+		
 function newNotification(messagenum){
 
 
