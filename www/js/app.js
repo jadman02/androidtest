@@ -4407,8 +4407,8 @@ var daysleft = unixleft / 86400;
 
 var weekdaynamew = weekday[expiredateobject.getDay()];
 
-	  alert(daysleft);
-	  alert(weekdaynamew);
+//	  alert(daysleft);
+//	  alert(weekdaynamew);
 	  
 if(daysleft <= 0){chatdaystring = 'Today';}
 else if(daysleft === 1){chatdaystring = 'Tomorrow';}
