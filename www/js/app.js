@@ -1169,7 +1169,7 @@ ptrContent.on('ptr:refresh', function (e) {
 	
 
 if ($('.content-here-2').css('display') === 'block'){ 	
-	alert('refresh trigger');
+	
 	var timesincelastupdate = Math.round(+new Date()/1000) - geoupdate;
 
 	if (firstupdate === false){getPreferences();firstupdate = true;}
@@ -1300,8 +1300,6 @@ var onSuccess = function(position) {
     latitudep = position.coords.latitude;
 longitudep = position.coords.longitude;
 
-//alert(latitudep);
-//alert(longitudep);
 
 
 	if (datatap === true){
@@ -1389,8 +1387,6 @@ var apiGeolocationSuccess = function(position) {
 latitudep = position.coords.latitude;
 longitudep = position.coords.longitude;
 
-//alert(latitudep);
-//alert(longitudep);
 
 	
 
@@ -4873,8 +4869,10 @@ var fivestamp_timestamp = Math.round(fivestamp/1000);
  
     cols: [
         {
-            displayValues: alldays_names,
-              values: alldays_values,
+//            displayValues: alldays_names,
+             displayValues: alldays_values,
+
+		values: alldays_values,
         },
         {
             textAlign: 'left',
