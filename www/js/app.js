@@ -1146,10 +1146,10 @@ $$('.panel-right').on('panel:closed', function () {
 
 
 
-/*
 // Pull to refresh content
 var ptrContent = $$('.pull-to-refresh-content-1');
  
+
 
 var geoupdate = Math.round(+new Date()/1000);
 var firstupdate = false;
@@ -1160,10 +1160,16 @@ var firstupdate = false;
 	
 
 
-
+// Add 'refresh' listener on it
 ptrContent.on('ptr:refresh', function (e) {
+    // Emulate 2s loading
+    //loaded = false;
 
+	//if ($('.no-results-div').length > 0) {myApp.pullToRefreshDone();return false;}
 	
+
+if ($('.content-here-2').css('display') === 'block'){ 	
+	alert('refresh trigger');
 	var timesincelastupdate = Math.round(+new Date()/1000) - geoupdate;
 
 	if (firstupdate === false){getPreferences();firstupdate = true;}
@@ -1233,6 +1239,10 @@ else {slidecontent = '<div class="age_'+random_all[i].age+' swiper-slide slide_'
 	
 		setTimeout(function(){ 
 		
+			myApp.showNavbar('.navbar-home');	
+		$( ".homedate" ).removeClass("disabled");
+	$( ".homeduck" ).removeClass("disabled");
+			
 					 $( ".results-loader" ).hide(); 
 		$( ".swiper-random" ).show();
 		$( ".swiper-nearby" ).show();
@@ -1259,9 +1269,13 @@ else {slidecontent = '<div class="age_'+random_all[i].age+' swiper-slide slide_'
      
         myApp.pullToRefreshDone('.pull-to-refresh-content-1');
     }, 1000);
+	
+	myApp.hideNavbar('.navbar-home');	
+		$( ".homedate" ).addClass("disabled");
+	$( ".homeduck" ).addClass("disabled");
+}
+	else {myApp.pullToRefreshDone('.pull-to-refresh-content-1');}
 });
-
-*/
 
 // Pull to refresh content
 var ptrContent = $$('.pull-to-refresh-content-2');
@@ -2498,12 +2512,14 @@ if (f_gender == 'Male' && f_interested == 'Women') {sexuality = 'male';}
 if (f_gender == 'Female' && f_interested == 'Women') {sexuality = 'lesbian';}
 if (f_gender == 'Female' && f_interested == 'Men') {sexuality = 'female';}
        
-   if (loadpref=== false){
+  if (loadpref=== false){
   if(homewant){
-       if (homewant == 'offline'){$( ".homedate" ).removeClass('active');$( ".homeduck" ).removeClass('active');$( ".content-here-1" ).show(); }
-     if (homewant == 'dateduck'){$( ".homedate" ).addClass('active');$( ".homeduck" ).addClass('active');$( ".content-here-1" ).hide(); }
-   if (homewant == 'duck'){$( ".homedate" ).removeClass('active');$( ".homeduck" ).addClass('active'); $( ".content-here-1" ).hide();}
-    if (homewant == 'date'){$( ".homedate" ).addClass('active');$( ".homeduck" ).removeClass('active');$( ".content-here-1" ).hide();}
+
+	  
+	  if (homewant == 'offline'){$( ".homedate" ).removeClass('active');$( ".homeduck" ).removeClass('active');$( ".content-here-1" ).show();	$( ".content-here-2" ).hide();$( ".toolbar-home" ).hide();$( ".results-loader" ).hide(); }
+     if (homewant == 'dateduck'){$( ".homedate" ).addClass('active');$( ".homeduck" ).addClass('active');$( ".content-here-1" ).hide(); $( ".content-here-2" ).show();}
+   if (homewant == 'duck'){$( ".homedate" ).removeClass('active');$( ".homeduck" ).addClass('active'); $( ".content-here-1" ).hide(); $( ".content-here-2" ).show();}
+    if (homewant == 'date'){$( ".homedate" ).addClass('active');$( ".homeduck" ).removeClass('active');$( ".content-here-1" ).hide();$( ".content-here-2" ).show();}
 }
 	   loadpref = true;
  establishNotif();
@@ -2513,6 +2529,7 @@ if (f_gender == 'Female' && f_interested == 'Men') {sexuality = 'female';}
         matchesListener();
  
 }
+
 
 
 
