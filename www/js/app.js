@@ -4869,8 +4869,8 @@ var fivestamp_timestamp = Math.round(fivestamp/1000);
  
     cols: [
         {
-//            displayValues: alldays_names,
-             displayValues: alldays_values,
+            displayValues: alldays_names,
+
 
 		values: alldays_values,
         },
@@ -5753,9 +5753,9 @@ $( ".messages" ).hide();
 	
 	
 if (dayw){
-alert(dayw);	
+	
 dayw = parseInt(dayw) + 7200;
-	alert(dayw);
+	
 var daycol = pickerCustomToolbar.cols[0];
 daycol.setValue(dayw);
 	
