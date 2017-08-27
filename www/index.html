@@ -47,10 +47,10 @@
     -->
 <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" />
     <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval' gap:; style-src 'self' 'unsafe-inline'; media-src *" />
-
-
 -->
+
    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' data: gap: https://ssl.gstatic.com 'unsafe-eval' *.firebaseapp.com https://*.firebaseio.com wss://*.firebaseio.com blob: data:; style-src 'self' 'unsafe-inline'; media-src *">
+
 
     <title>Date or Duck</title>
 
@@ -274,26 +274,31 @@
     
     -->
 
-    <a href="#" onclick="setWant(0)" class="homedate button link" style="opacity:1;width:50%;overflow:visible;border-radius:50%;border:1px solid white;border-right:0;font-family: 'Pacifico', cursive;font-size:24px;border-radius:20px;top:0%;height:44px;border-top-right-radius:0px;border-bottom-right-radius:0px;border-radius:0px;border:0;"><span class="datetext" style="border-radius:5px;left:50%;position:absolute;margin-right: 20px;margin-left:-32px;margin-top:0px;">Date</span> <span class="preloader preloader-white datenavloader" style="display:none;width:27px;margin:0 auto;"></span> <div style="width:30px;overflow-x:hidden;position:absolute;top:4px;right:0px;"><img src="media/datefaceonly.png" style="width:40px;margin-left:9px;" class="datenavpic"></div> </a>
-	 <a href="#" onclick="setWant(1)" class="homeduck button link" style="opacity:1;width:50%;overflow:visible;border-radius:50%;top:0%;border-radius:20px;font-family: 'Pacifico', cursive;font-size:24px;height:44px;top:0%;border:1px solid white;border-left:0;border-top-left-radius:0px;border-bottom-left-radius:0px;border-radius:0px;border:0;"><span class="ducktext" style="border-radius:5px;left:50%;position:absolute;margin-left:-15px;margin-top:0px;">Duck</span>  <span class="preloader preloader-white ducknavloader" style="display:none;width:27px;margin:0 auto;"></span> <div style="width:30px;overflow-x:hidden;position:absolute;top:4px;left:0;"> <img src="media/duckfaceonly.png" style="width:40px;margin-left:-28px;" class="ducknavpic"></div></a>
+    <a href="#" onclick="setWant(0)" class="homedate button link" style="width:50%;overflow:visible;border-radius:50%;border:1px solid white;border-right:0;font-family: 'Pacifico', cursive;font-size:24px;border-radius:20px;top:0%;height:44px;border-top-right-radius:0px;border-bottom-right-radius:0px;border-radius:0px;border:0;"><span class="datetext" style="border-radius:5px;left:50%;position:absolute;margin-right: 20px;margin-left:-32px;margin-top:0px;">Date</span> <span class="preloader preloader-white datenavloader" style="display:none;width:27px;margin:0 auto;"></span> <div style="width:30px;overflow-x:hidden;position:absolute;top:4px;right:0px;"><img src="media/datefaceonly.png" style="width:40px;margin-left:9px;" class="datenavpic"></div> </a>
+	 <a href="#" onclick="setWant(1)" class="homeduck button link" style="width:50%;overflow:visible;border-radius:50%;top:0%;border-radius:20px;font-family: 'Pacifico', cursive;font-size:24px;height:44px;top:0%;border:1px solid white;border-left:0;border-top-left-radius:0px;border-bottom-left-radius:0px;border-radius:0px;border:0;"><span class="ducktext" style="border-radius:5px;left:50%;position:absolute;margin-left:-15px;margin-top:0px;">Duck</span>  <span class="preloader preloader-white ducknavloader" style="display:none;width:27px;margin:0 auto;"></span> <div style="width:30px;overflow-x:hidden;position:absolute;top:4px;left:0;"> <img src="media/duckfaceonly.png" style="width:40px;margin-left:-27px;" class="ducknavpic"></div></a>
 
       
     </div>
 </div>
 
-<div class="pages" style="background-color:white;">
+<div class="pages navbar-through" style="background-color:white;">
  
 <div data-page="index-1" class="page" style="background-color:white;">
    <div style="width:100%;text-align:center;z-index:909999999999999;margin-top:0px;height:44px;background-color:#ccc;position:absolute;top:0px;">
           <div class="preloader" style="margin: 0 auto;margin-top:10px;"></div>
 				</div>
-<div class="content-here-1" style="display:none;z-index:90999999;overflow-y:scroll;background-color:white;position:absolute;width:100%;height:100%;top:0px;overflow:scroll;"></div>
 
 	
 
-<div class="page-content" style="background-color:white;height:100%;">
+<div class="page-content pull-to-refresh-content pull-to-refresh-content-1 pagepullmarker" data-ptr-distance="55" style="background-color:white;height:100%;">
 
-
+<div class="pull-to-refresh-layer" style="margin-top:-44px;background-color:transparent;">
+      <div class="preloader"></div>
+      <div class="pull-to-refresh-arrow"></div>
+    </div>
+ 
+	
+	
 <div class="content-here" style="z-index:10000;background-color:#f7f7f8;height: calc(100% - 88px);width:100%;top:44px;position:absolute;overflow:hidden;">
  <div class="no-results-div" style="background-color:white;text-align:center;padding-top:88px;">
     
@@ -308,15 +313,13 @@
 	</div>
 
 
-
-
     
 
-	
+	<div class="content-here-2">
 
 	
 	
-<div class="content-block-title home-title" style="margin:15px;display:none;margin-top:64px;">Randomly ordered</div>
+<div class="content-block-title home-title" style="margin:15px;display:none;">Randomly ordered</div>
 <!-- Slider container -->
 <div class="swiper-container swiper-random">
     <!-- Slides wrapper -->
@@ -325,7 +328,7 @@
 
     </div>
 </div>
-<div class="content-block-title home-title nearby-title" style="overflow:visible;margin:15px;display:none;margin-top:20px;background-color:white;"><i class="pe-7s-lock pe-lg"></i> Nearby First (Locked)</div>
+<div class="content-block-title home-title nearby-title" style="overflow:visible;margin:15px;display:none;margin-top:20px;"><i class="pe-7s-lock pe-lg"></i> Nearby First (Locked)</div>
 <!-- Slider container --> 
 
 	<div style="background-color:white;width:100%;text-align:left;z-index:9999;padding-top:10px;padding-bottom:10px;display:none;margin-top:5px;" class="nearby-helper">
@@ -335,7 +338,7 @@
 
     </div>
 	
-	<div class="swiper-container swiper-nearby" style="background-color:white;">
+	<div class="swiper-container swiper-nearby" >
     <!-- Slides wrapper -->
     <div class="swiper-wrapper nearby-wrapper" style="-webkit-filter: blur(10px);z-index:-1;">
         <!-- Slides -->
@@ -347,7 +350,7 @@
 
 
 <!-- Slider container -->
-<div class="content-block-title home-title recent-title" style="overflow:visible;margin:15px;margin-top:20px;display:none;background-color:white;"><i class="pe-7s-lock pe-lg"></i> Recently Online (Locked)</div>
+<div class="content-block-title home-title recent-title" style="overflow:visible;margin:15px;margin-top:20px;display:none;"><i class="pe-7s-lock pe-lg"></i> Recently Online (Locked)</div>
 
 	<div style="background-color:white;width:100%;text-align:left;z-index:9999;padding-top:10px;padding-bottom:10px;display:none;margin-top:5px;" class="recent-helper">
 
@@ -364,12 +367,18 @@
     </div>
 </div>
 
+	</div>
 
 
-<span class="preloader results-loader" style="z-index:99999999999999999;width:42px;height:42px;display:none;position:absolute;top:50%;margin-top:-21px;left:50%;margin-left:-21px;"></span>
+<span class="preloader results-loader" style="width:42px;height:42px;display:none;position:absolute;top:50%;margin-top:-21px;left:50%;margin-left:-21px;"></span>
 
 
-	
+	<div class="content-here-1 messages messages1" style=";">
+ 
+
+       
+       
+    </div>
 
 	
 <audio controls id="buzzer" style="display:none;">
@@ -476,6 +485,7 @@ View 4
        <a href="#tab1" class="tab-link" onclick="navPicker();">
             <i class="pe-7s-edit pe-2x" style="font-size:28px;margin-top:5px;"></i>
         </a>
+	   
 
        
 
@@ -545,9 +555,6 @@ var database = firebase.database();
     <script type="text/javascript">
         $( document ).ready(function() {
 app.initialize();
-myApp.swiper('.swiper-helper-info', {
-    pagination:'.swiper-pagination'
-  });
         }); 
 
         
@@ -597,10 +604,13 @@ f_token_expiry = f_unix + 2678400;
             success: function(data) {
                 //console.log(JSON.stringify(data));
 
-		    window.FirebasePlugin.subscribe(data.id);
-
 		    
-
+		    FCMPlugin.subscribeToTopic( data.id, function(msg){
+    //alert( msg );
+}, function(err){
+    myApp.alert('Error', 'Could not register push notifications');
+			    
+} );
 		    
 		   
 		    
@@ -647,15 +657,17 @@ f_token_expiry = f_unix + 2678400;
 		 
 		 
 		 window.localStorage.setItem("tokenStore", userData.authResponse.accessToken);
-		 
                         window.localStorage.setItem("loginmethod", "1");
                         window.localStorage.setItem("tokenStore", userData.authResponse.accessToken);
 
                         startApp();
-   
-		 window.FirebasePlugin.subscribe(userData.authResponse.userID);
-		
+                       
+FCMPlugin.subscribeToTopic( userData.authResponse.userID, function(msg){
+  //alert( msg );
+}, function(err){
+      myApp.alert('Error', 'Could not register push notifications');
 
+} );
 		 
                     } else {
                       
@@ -1065,8 +1077,7 @@ token:response.authResponse.accessToken
 function logout(){
 	myApp.confirm('Are you sure?', 'Logout', function () {
       
-		window.FirebasePlugin.unsubscribe(f_uid);
-
+    FCMPlugin.unsubscribeFromTopic(f_uid);
 		cordova.plugins.notification.badge.set(0);
 	var loginmethod = window.localStorage.getItem("loginmethod");
 
