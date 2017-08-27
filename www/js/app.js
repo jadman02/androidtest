@@ -497,11 +497,16 @@ else{$( ".homedate" ).addClass("active");
 
 
 function updateWant(){
-	
+if(updatefunction){clearTimeout(updatefunction);
+		  
+
+		  
+		  }
+$( ".content-here-1" ).hide();
 	
 
-if(updatefunction){clearTimeout(updatefunction);}
-$( ".content-here-1" ).hide();
+
+	
 	$( ".content-here" ).hide();
 $( ".recent-helper" ).hide(); 
 			 $( ".nearby-helper" ).hide(); 
@@ -512,12 +517,19 @@ randomswiper.update();
 nearbyswiper.update();
 recentswiper.update();
 	$( ".home-title" ).hide(); 
-			 $( ".results-loader" ).show(); 
 
-	
+				 $( ".results-loader" ).show(); 
+
 	if (homewant == 'offline'){
-  $( ".toolbar-home" ).hide();
+		
+  //$( ".pagepullmarker" ).removeClass('pull-to-refresh-content-1');
+ // $( ".pagepullmarker" ).removeClass('pull-to-refresh-content');
+		//$( ".pull-to-refresh-layer" ).hide();
+
+		$( ".toolbar-home" ).hide();
 $( ".content-here-1" ).show();
+	$( ".content-here-2" ).hide();
+			 $( ".results-loader" ).hide(); 
 
 
 		new_all = [];
@@ -530,7 +542,10 @@ recent_all = [];
 	}
 else{
  $( ".statusbar-overlay" ).css("background-color","#2196f3"); 
-
+$( ".content-here-2" ).show();
+	//$( ".pagepullmarker" ).addClass('pull-to-refresh-content-1');
+	// $( ".pagepullmarker" ).addClass('pull-to-refresh-content');
+//	$( ".pull-to-refresh-layer" ).show();
 }
 	
 firebase.database().ref('users/' + f_uid).update({
@@ -539,7 +554,8 @@ firebase.database().ref('users/' + f_uid).update({
 	
    //Will update firebase user homewant
    //Check if updateuser function is in go daddy file
-   
+
+	if (homewant != 'offline'){
    firebase.auth().currentUser.getToken().then(function(idToken) {   
 $.post( "http://www.dateorduck.com/updatewant.php", { projectid:f_projectid,token:idToken,currentid:firebase.auth().currentUser.uid,uid:f_uid,want:homewant} )
 
@@ -553,7 +569,7 @@ $.post( "http://www.dateorduck.com/updatewant.php", { projectid:f_projectid,toke
     }).catch(function(error) {
   // Handle error
 });
-   
+	}
 
    
    
@@ -1482,9 +1498,82 @@ else{}
 }
   });
 
+var myyMessages;
+function appFeatures(clicked,first){
+
+	if (clicked == '0'){
+	
+		if(first){
+		$( ".yesfea").addClass('disabled');
+		$( ".nofea").remove();
+		}
+				  myyMessages.addMessage({
+
+    text: 'We\'re a new app so we appreciate your support!',
+    type: 'sent',
+        avatar: 'media/ducksquare.png'
+
+  });
+				myyMessages.addMessage({
+				 text: 'Can you invite some friends?<br/><br/><a href="#" class="button-big button active" style="margin-bottom:10px;" onclick="appLink()">Invite</a></br><a href="#" class="button-big button active" style="margin-bottom:10px;" onclick="sharePop()">Share</a><br/><a class="button-big button external active" href="sms:&body=Check out a new dating app in the App Store: https://fb.me/1554148374659639. Thoughts? " style="margin-bottom:10px;">SMS</a>',
+    type: 'sent',
+        avatar: 'media/ducksquare.png'
+
+  });
+
+	
+	}
+	else{
+	$( ".nofea").addClass('disabled');
+		$( ".yesfea").remove();
+		
+		
+		
+		
+		
+		
+		setTimeout(function(){ 
+				  myyMessages.addMessage({
+
+    text: 'This app is designed to minimise chat and encourage real life meetups.',
+    type: 'sent',
+        avatar: 'media/ducksquare.png'
+
+  });	
+		}, 1500);
+		setTimeout(function(){ 
+				  myyMessages.addMessage({
+
+    text: 'When you agree to meet, chat is enabled, until midnight of your date. Chat is disabled until you make another time to meet.',
+    type: 'sent',
+        avatar: 'media/ducksquare.png'
+
+  });	
+			}, 4300);
+		
+		setTimeout(function(){
+				  myyMessages.addMessage({
+
+    text: 'You can share your availability and send photos that delete after 24 hours.',
+    type: 'received',
+        avatar: 'media/datesquare.png'
+
+  });	
+			appFeatures(0);
+}, 7500);
+						
+		
+		
+	}
+
+}
+
+
+var refreshIntervalYo;
+
 function getMatches(){
 
-	myApp.pullToRefreshDone('.pull-to-refresh-content-1');
+	//myApp.pullToRefreshDone('.pull-to-refresh-content-1');
 //$( ".content-here" ).empty();            
 $( ".content-here" ).hide();
 	
@@ -1533,7 +1622,7 @@ nearby_all = [];
 recent_all = [];
 
 	var sharebuttons;
-	var swiperheight = 180;
+	var swiperheight = $( window ).height() - 378;
 var loginmethod = window.localStorage.getItem("loginmethod");
 	if (loginmethod == '1'){sharebuttons = '<a href="#" class="button-big button active" style="margin-bottom:10px;" onclick="appLink()">Invite Friends</a><a href="#" class="button-big button" style="margin-bottom:10px;" onclick="sharePop()">Share</a><a class="button-big button external" href="sms:&body=Check out this a new dating app in the App Store: https://fb.me/1554148374659639. Thoughts? " style="margin-bottom:10px;">Send SMS</a>';}
 	else{sharebuttons = '<a class="button-big button external" href="sms:&body=Check out a new dating app in the App Store: https://fb.me/1554148374659639. Thoughts? " style="margin-bottom:10px;">Send SMS</a>';}
@@ -1541,73 +1630,108 @@ var loginmethod = window.localStorage.getItem("loginmethod");
 	
 	if ($('.topdiv').length > 0) {}
 	else{
+		
+	var messagesarray=['Quack!','Press one or both of the buttons above','Choose <span style="font-family: \'Pacifico\';font-weight:100;">duck</span> to find fun <i class="twa twa lg twa-sweat-drops" style="margin-left:5px;"></i><i class="twa twa-lg twa-eggplant" style="margin-left:5px;"></i>','PS: Duck means you\'re interested (Replace the D with another letter)','Choose <span style="font-family: \'Pacifico\';font-weight:100;">date</span> to find others looking for love','<i class="twa twa-2x twa-heart-eyes"></i>','Do you know how this app works?<br/><br/><a href="#" onclick="appFeatures(0,1)" class="button button-big active yesfea" style="float:left;background-color:#4cd964;width:40%;border-color:transparent;">Yes</a><a href="#" onclick="appFeatures(1)" class="button button-big active nofea" style="float:left;margin-left:5px;background-color:#ff3b30;width:40%;border-color:transparent;">No</a>'];
+	var fromarray = ['date','date','duck','duck','date','date','date'];
+		
+		
+	
+		
+		
 	$('.content-here-1').html(
 
-		'<div class="no-results-div" style="background-color:white;z-index:30000000;text-align:center;margin:0 auto;width:300px;position:absolute;top:44px;left:50%;margin-left:-150px;">'+
-'<div class="topdiv">'+
-		 
+
+	'<div class="no-results-div"><div class="topdiv"></div></div>');
+		//		'<div class="no-results-div" style="height:calc(100% - 44px);background-color:white;z-index:30000000;text-align:center;margin:0 auto;width:300px;position:absolute;top:44px;left:50%;margin-left:-150px;">'+
+//'<div class="topdiv">'+
      // '<h3>Get Quacking!</h3>'+
-				'    <div class="content-block-title" style="width:100%;text-align:center;margin-top:15px;margin-left:0px;">Get Quacking, It\'s Easy</div>'+
 
-       '<div class="row" style="padding-top:10px;padding-bottom:10px;">'+
-    '<div class="col-30" style="padding-top:5px;"><img src="media/datefaceonly.png" style="width:80px;margin:0 auto;"></div>'+
-   // '<div class="col-70" style="padding-top:5px;">Press <span style="font-family: \'Pacifico\', cursive;font-size:20px;">date</span> if you want to find something more serious like a relationship.</div>'+
-		    '<div class="col-70" style="padding-top:5px;">Press <span style="font-family: \'Pacifico\', cursive;font-size:26px;">date</span> to find love <br/>(or at least try)</div>'+
+  //'<div class="page-content" id="contentmessagediv" style="height:calc(100% - 44px);width:100%;background-color:red;">'+
+   
+ //   '<div class="messages messages1">'+
+ 
 
-'</div>'+
-              '<div class="row" style="padding-top:10px;padding-bottom:10px;margin-bottom:10px;">'+
-    '<div class="col-30" style="padding-top:5px;"><img src="media/duckfaceonly.png" style="width:80px;margin:0 auto;"></div>'+
-//    '<div class="col-70" style="padding-top:5px;">Press <span style="font-family: \'Pacifico\', cursive;font-size:20px;">duck</span> if you want to get down to...ahem...business (replace the D with another letter). </div>'+
-		    '<div class="col-70" style="padding-top:5px;">Press <span style="font-family: \'Pacifico\', cursive;font-size:26px;">duck</span> to find fun <br/>(replace the D with another letter)</div>'+
-
-		'</div>'+
-	 '</div>'+   
+       
+       
+    //'</div>'+
+  //'</div>'+
 
 	
-		  '<div class="list-block-label" style="background-color:#f7f7f8;border-radius:5px;margin-bottom:10px;padding:5px;color:#444444">When you see this screen your profile is offline and hidden to other people.</div>'+
 
 		
-'<div class="swiper-container swiper-helper-info" style="z-index:99999999999999;background-color:#ccc;color:#6d6d72;margin-left:-10px;margin-right:-10px;padding-top:10px;">'+
-'    <div class="content-block-title" style="width:100%;text-align:center;margin-top:15px;margin-left:0px;">How this App Works</div>'+
-		' <div class="swiper-wrapper">'+
-     '   <div class="swiper-slide" style="height:'+swiperheight +'px;"><div class="squareheight" style="height:183px;top:50%;margin-top:-85px;position:absolute;width:300px;left:50%;margin-left:-150px;"><i class="twa twa-4x twa-coffee" style="margin-top:5px;"></i><h2>Find your next<br/> coffee date...</h2></div></div>'+
-     '   <div class="swiper-slide" style="height:'+swiperheight +'px;"><div class="squareheight" style="height:183px;top:50%;margin-top:-85px;position:absolute;width:300px;left:50%;margin-left:-150px"><i class="twa twa-4x twa-wave" style="margin-top:5px;"></i><h2>Or invite someone over<br/> tonight...</h2></div></div>'+
-		               '   <div class="swiper-slide" style="height:'+swiperheight +'px;"><div class="squareheight" style="height:183px;top:50%;margin-top:-85px;position:absolute;width:300px;left:50%;margin-left:-150px"><i class="twa twa-4x twa-heart-eyes" style="margin-top:5px;"></i><h2>When you like someone, <br/>they can see...</h2></div></div>'+
 
-		'   <div class="swiper-slide" style="height:'+swiperheight +'px;"><div class="squareheight" style="height:183px;top:50%;margin-top:-85px;position:absolute;width:300px;left:50%;margin-left:-150px"><i class="twa twa-4x twa-calendar" style="margin-top:5px;"></i><h2>Once you both agree on</br> a time to meet...</h2></div></div>'+
-
-		'   <div class="swiper-slide" style="height:'+swiperheight +'px;"><div class="squareheight" style="height:183px;top:50%;margin-top:-85px;position:absolute;width:300px;left:50%;margin-left:-150px"><i class="twa twa-4x twa-clock12" style="margin-top:5px;"></i><h2>Chat is enabled until <br/>midnight of your date...</h2></div></div>'+
-
-		'   <div class="swiper-slide" style="height:'+swiperheight +'px;"><div class="squareheight" style="height:183px;top:50%;margin-top:-85px;position:absolute;width:300px;left:50%;margin-left:-150px"><i class="twa twa-4x twa-bomb" style="margin-top:5px;"></i><h2>You can send photos that delete after 24 hours...</h2></div></div>'+
-
-		               '   <div class="swiper-slide" style="height:'+swiperheight +'px;"><div class="squareheight" style="height:153px;top:50%;margin-top:-85px;position:absolute;width:300px;left:50%;margin-left:-150px"><i class="twa twa-4x twa-watch" style="margin-top:5px;"></i><h2>You can share availability<br/> to easily schedule dates</h2></div></div>'+
-
-   ' </div>'+
-
-    '<div class="swiper-pagination-p" style="margin-top:-20px;margin-bottom:20px;"></div>'+
-'</div>'+
-   
-		'    <div class="content-block-title" style="width:100%;text-align:center;margin-top:20px;margin-bottom:10px;margin-left:0px;">Support this app</div>'+
-sharebuttons+
-    '</div>');
+   //'</div>'+
+	
+    //'</div>');
 
 
     $( ".ploader" ).hide();
-var homeswiperhelper = myApp.swiper('.swiper-helper-info', {
-    pagination:'.swiper-pagination-p'
-  });
+
+		myyMessages = myApp.messages('.messages1', {
+  scrollMessagesOnlyOnEdge:true
+			
+});
+	
+		
+		
+	var homemessageno = 0;
+		var sendavatar; 
+		var sendtype;
+		function doAdd(){
+		if (fromarray[homemessageno] == 'date'){sendavatar = 'media/datesquare.png';sendtype = 'received';}
+			if (fromarray[homemessageno] == 'duck'){sendavatar = 'media/ducksquare.png';sendtype = 'sent';}
+			
+			homemessageno = $('.message').length;
+			
+			 	
+
+			
+		if (homemessageno == 7 || ($('.content-here-2').css('display') === 'block')){clearInterval(refreshIntervalYo);}
+			
+			else{
+			
+				  myyMessages.addMessage({
+
+    text: messagesarray[homemessageno],
+    type: sendtype,
+        avatar: sendavatar
+
+  })
+				
+			
+			
+			}
+			
+		}
+		
+		
+			var myFFunction = function() {
+        doAdd();
+        var rand = Math.round(Math.random() * (2000 - 700)) + 1000; 
+        refreshIntervalYo = setTimeout(myFFunction, rand);
+        
+        
+        
+    }
+
+			myFFunction();
+		
+		
+		
+
+		
 	}
   
     $( ".loginbutton" ).show();
 $( ".login-loader" ).hide();
     
 
-	
-	updatefunction = setTimeout(function(){
-	
+
+	updatefunction =  setTimeout(function(){
+myApp.showNavbar('.navbar-home');	
 		$( ".homedate" ).removeClass("disabled");
 	$( ".homeduck" ).removeClass("disabled");
-		myApp.showNavbar('.navbar-home','false');	
+		
 
 	
 	
@@ -1678,10 +1802,10 @@ var loginmethod = window.localStorage.getItem("loginmethod");
 		$('.content-here').show();
 	
       updatefunction = setTimeout(function(){
-	
+	myApp.showNavbar('.navbar-home');
 		$( ".homedate" ).removeClass("disabled");
 	$( ".homeduck" ).removeClass("disabled");
-	myApp.showNavbar('.navbar-home','false');
+	
 	
 	}, 2000);
 	   
@@ -1956,8 +2080,9 @@ if ($('.slide_' + graphid).length){
 
   
   //Do not show the users profile to themselves, and do not show profiles older than 1 month
-  if ((graphid != f_uid) && (blockedid < 0) && (diff < 43800)){
+ // if ((graphid != f_uid) && (blockedid < 0) && (diff < 43800)){
       
+  if ((graphid != f_uid) && (blockedid < 0)){
 
      
 var index1 = f_date_match.indexOf(graphid);
@@ -2076,10 +2201,10 @@ if (recent_all[0].id == graphid || recent_all[1].id == graphid || recent_all[2].
 
 
 	updatefunction = setTimeout(function(){
-	
+	myApp.showNavbar('.navbar-home');
 		$( ".homedate" ).removeClass("disabled");
 	$( ".homeduck" ).removeClass("disabled");
-	myApp.showNavbar('.navbar-home','false');
+	
 	
 	}, 2000);
 	
