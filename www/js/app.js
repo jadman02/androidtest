@@ -5756,7 +5756,7 @@ $( ".messages" ).hide();
 	
 if (dayw){
 	
-
+dayw = dayw - 7200;
 var daycol = pickerCustomToolbar.cols[0];
 daycol.setValue(dayw);
 	
