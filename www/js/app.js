@@ -1614,15 +1614,15 @@ if ((initialload === false) && (availarray.length === 0)){
 
 	
 	
-if (!homewant || homewant =='offline'){
-
+if ((homewant== null) || (homewant =='offline')){
 	
 	$( ".content-here" ).hide();
    $( ".statusbar-overlay" ).css("background-color","#ccc");
 	$( ".buttons-home" ).hide();
 	$( ".toolbar-home" ).hide();
 	$( ".results-loader" ).hide();
-
+	$( ".content-here-1" ).show();	$( ".content-here-2" ).hide();
+	
 	var loginmethod = window.localStorage.getItem("loginmethod");
 	if (loginmethod == '1'){$( ".login2" ).show();}
 	else{$( ".login2" ).hide();}
@@ -1688,10 +1688,11 @@ var loginmethod = window.localStorage.getItem("loginmethod");
 		var sendavatar; 
 		var sendtype;
 		function doAdd(){
-		if (fromarray[homemessageno] == 'date'){sendavatar = 'media/datesquare.png';sendtype = 'received';}
+					homemessageno = $('.message').length;
+
+			if (fromarray[homemessageno] == 'date'){sendavatar = 'media/datesquare.png';sendtype = 'received';}
 			if (fromarray[homemessageno] == 'duck'){sendavatar = 'media/ducksquare.png';sendtype = 'sent';}
 			
-			homemessageno = $('.message').length;
 			
 			 	
 
@@ -2509,10 +2510,11 @@ if (f_gender == 'Female' && f_interested == 'Women') {sexuality = 'lesbian';}
 if (f_gender == 'Female' && f_interested == 'Men') {sexuality = 'female';}
        
   if (loadpref=== false){
-  if(homewant){
+  if((homewant == null) || (homewant == 'offline')){$( ".homedate" ).removeClass('active');$( ".homeduck" ).removeClass('active');$( ".content-here-1" ).show();	$( ".content-here-2" ).hide();$( ".toolbar-home" ).hide();$( ".results-loader" ).hide();}
+	  else{
 
 	  
-	  if (homewant == 'offline'){$( ".homedate" ).removeClass('active');$( ".homeduck" ).removeClass('active');$( ".content-here-1" ).show();	$( ".content-here-2" ).hide();$( ".toolbar-home" ).hide();$( ".results-loader" ).hide(); }
+
      if (homewant == 'dateduck'){$( ".homedate" ).addClass('active');$( ".homeduck" ).addClass('active');$( ".content-here-1" ).hide(); $( ".content-here-2" ).show();}
    if (homewant == 'duck'){$( ".homedate" ).removeClass('active');$( ".homeduck" ).addClass('active'); $( ".content-here-1" ).hide(); $( ".content-here-2" ).show();}
     if (homewant == 'date'){$( ".homedate" ).addClass('active');$( ".homeduck" ).removeClass('active');$( ".content-here-1" ).hide();$( ".content-here-2" ).show();}
